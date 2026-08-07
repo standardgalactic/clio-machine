@@ -63,7 +63,9 @@ INPUT_RE = re.compile(r"\\input\{([^}]+)\}")
 
 
 def chapter_dirs(parts_root: Path):
-    yield from sorted(parts_root.glob("**/ch*"))
+    for path in sorted(parts_root.glob("**/ch*")):
+        if path.is_dir():
+            yield path
 
 
 def validate_chapter(chdir: Path, root: Path) -> list[str]:
