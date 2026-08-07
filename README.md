@@ -16,6 +16,8 @@ The current implementation is intentionally small and append-only:
 - `bin/spherepop` provides a Bash-friendly CLI for recording and inspecting history.
 - `forth/` provides a tiny Forth compiler + VM whose execution is realized through
   Spherepop events.
+- `spherepop_blender/` + `scenes/` provide a Blender visualization suite for
+  persistent Spherepop event histories.
 
 ## Research protocol docs
 
@@ -26,6 +28,7 @@ The current implementation is intentionally small and append-only:
 - `/home/runner/work/clio-machine/clio-machine/docs/GLOSSARY.md` defines project terms.
 - `/home/runner/work/clio-machine/clio-machine/docs/CONTRIBUTING.md` defines human and AI contribution rules.
 - `/home/runner/work/clio-machine/clio-machine/agents/project_context.md` provides a concise machine-oriented prompt.
+- `/home/runner/work/clio-machine/clio-machine/SPHEREPOP_BLENDER_SUITE.md` documents the Blender scene suite and headless render scripts.
 
 ## Quick start
 
