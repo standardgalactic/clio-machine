@@ -1,0 +1,11 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{clio-diagrams}[2026/08/07 CLIO diagram conventions]
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,fit,backgrounds}
+
+\tikzset{
+  clio-node/.style={draw, rounded corners, align=center, inner sep=6pt},
+  clio-arrow/.style={-{Latex[length=2mm]}, thick},
+  clio-constraint/.style={draw, dashed, rounded corners}
+}

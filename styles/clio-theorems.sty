@@ -1,0 +1,24 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{clio-theorems}[2026/08/07 CLIO theorem environments]
+
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{assumption}[definition]{Assumption}
+\newtheorem{example}[definition]{Example}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{observation}[definition]{Observation}
+
+\theoremstyle{plain}
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+
+\newtheorem{algorithm}[definition]{Algorithm}
+\newtheorem{experiment}[definition]{Computational Experiment}
+\newtheorem{engineeringnote}[definition]{Engineering Note}
+\newtheorem{historicalnote}[definition]{Historical Note}

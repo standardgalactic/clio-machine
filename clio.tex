@@ -1,0 +1,79 @@
+\documentclass[11pt,oneside]{book}
+
+\usepackage{subfiles}
+\usepackage{styles/clio-metadata}
+\usepackage{styles/clio-typography}
+\usepackage{styles/clio-theorems}
+\usepackage{styles/clio-notation}
+\usepackage{styles/clio-references}
+\usepackage{styles/clio-diagrams}
+\usepackage{styles/clio-listings}
+
+\addbibresource{bibliography/machine-learning.bib}
+\addbibresource{bibliography/optimization.bib}
+\addbibresource{bibliography/logic-and-csp.bib}
+\addbibresource{bibliography/category-theory.bib}
+\addbibresource{bibliography/physics-and-fields.bib}
+\addbibresource{bibliography/cybernetics-and-systems.bib}
+\addbibresource{bibliography/programming-languages.bib}
+\addbibresource{bibliography/history-and-philosophy.bib}
+
+\title{CLIO: Constraint-Linked Inference and Optimisation}
+\author{CLIO Research Programme}
+\date{\today}
+
+\begin{document}
+
+\frontmatter
+\input{frontmatter/title}
+\input{frontmatter/copyright}
+\input{frontmatter/dedication}
+\input{frontmatter/preface}
+\input{frontmatter/acknowledgements}
+\tableofcontents
+\input{frontmatter/notation-guide}
+\input{frontmatter/roadmap}
+
+\mainmatter
+
+\part{Foundations of Reconstruction}
+\subfile{parts/part-i-foundations/ch01-introduction/chapter}
+\subfile{parts/part-i-foundations/ch02-reconstruction-problem/chapter}
+\subfile{parts/part-i-foundations/ch03-constraints-primary/chapter}
+\subfile{parts/part-i-foundations/ch04-projection-geometry/chapter}
+
+\part{Inference and Dynamics}
+\subfile{parts/part-ii-inference-dynamics/ch05-constraint-propagation/chapter}
+\subfile{parts/part-ii-inference-dynamics/ch06-optimization-admissible-space/chapter}
+\subfile{parts/part-ii-inference-dynamics/ch07-clio-dynamics/chapter}
+\subfile{parts/part-ii-inference-dynamics/ch08-mathematical-framework/chapter}
+
+\part{Integration and Repair}
+\subfile{parts/part-iii-integration-repair/ch09-rsvp-relationship/chapter}
+\subfile{parts/part-iii-integration-repair/ch10-repair-reconfiguration/chapter}
+\subfile{parts/part-iii-integration-repair/ch11-applications/chapter}
+
+\part{Comparison and Continuation}
+\subfile{parts/part-iv-comparison-future/ch12-existing-paradigms/chapter}
+\subfile{parts/part-iv-comparison-future/ch13-future-research/chapter}
+\subfile{parts/part-iv-comparison-future/ch14-conclusion/chapter}
+
+\appendix
+\part{Mathematical Appendices}
+\subfile{appendices/apx-a-constraint-manifolds/appendix}
+\subfile{appendices/apx-b-projections/appendix}
+\subfile{appendices/apx-c-fixed-points/appendix}
+\subfile{appendices/apx-d-stability/appendix}
+\subfile{appendices/apx-e-complexity/appendix}
+\subfile{appendices/apx-f-category-theory/appendix}
+\subfile{appendices/apx-g-rsvp-integration/appendix}
+\subfile{appendices/apx-h-repair-operators/appendix}
+
+\backmatter
+\input{backmatter/glossary}
+\input{backmatter/historical-notes}
+\printbibliography[heading=bibintoc,title={Bibliography}]
+\printindex[subject]
+\printindex[notation]
+
+\end{document}
