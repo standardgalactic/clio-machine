@@ -17,6 +17,16 @@ The current implementation is intentionally small and append-only:
 - `forth/` provides a tiny Forth compiler + VM whose execution is realized through
   Spherepop events.
 
+## Research protocol docs
+
+- `/home/runner/work/clio-machine/clio-machine/COPILOT.md` defines contributor context for coding agents.
+- `/home/runner/work/clio-machine/clio-machine/docs/INVARIANTS.md` defines semantic contracts.
+- `/home/runner/work/clio-machine/clio-machine/docs/ARCHITECTURE.md` describes repository layers.
+- `/home/runner/work/clio-machine/clio-machine/docs/ROADMAP.md` separates foundation, active focus, and experiments.
+- `/home/runner/work/clio-machine/clio-machine/docs/GLOSSARY.md` defines project terms.
+- `/home/runner/work/clio-machine/clio-machine/docs/CONTRIBUTING.md` defines human and AI contribution rules.
+- `/home/runner/work/clio-machine/clio-machine/agents/project_context.md` provides a concise machine-oriented prompt.
+
 ## Quick start
 
 ```bash
@@ -32,3 +42,15 @@ bin/forth "2 3 + ."
 ```
 
 Use `SPHEREPOP_STATE_PATH` to control where history is persisted.
+
+## Tests
+
+Run all tests:
+
+```bash
+python -m unittest discover -s tests -p "test_*.py"
+```
+
+Invariant-focused regression coverage lives in:
+
+- `/home/runner/work/clio-machine/clio-machine/tests/test_semantic_invariants.py`
