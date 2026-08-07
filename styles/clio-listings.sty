@@ -1,0 +1,24 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{clio-listings}[2026/08/07 CLIO listings]
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{clio-keyword}{RGB}{0,65,155}
+\definecolor{clio-comment}{RGB}{0,115,85}
+\definecolor{clio-string}{RGB}{140,20,20}
+
+\lstdefinestyle{clio}{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{clio-keyword}\bfseries,
+  commentstyle=\color{clio-comment}\itshape,
+  stringstyle=\color{clio-string},
+  numbers=left,
+  numberstyle=\tiny,
+  stepnumber=1,
+  numbersep=8pt,
+  breaklines=true,
+  frame=single,
+  showstringspaces=false,
+  tabsize=2
+}

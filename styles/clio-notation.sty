@@ -1,0 +1,23 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{clio-notation}[2026/08/07 CLIO notation]
+
+\usepackage{bm}
+\usepackage{xspace}
+\usepackage{imakeidx}
+\makeindex[name=subject,title=Subject Index]
+\makeindex[name=notation,title=Notation Index]
+
+\newcommand{\sindex}[1]{\index[subject]{#1}}
+\newcommand{\nindex}[1]{\index[notation]{#1}}
+
+\newcommand{\stateSpace}{\mathcal{X}}
+\newcommand{\observationSpace}{\mathcal{Y}}
+\newcommand{\constraintSet}{\mathcal{C}}
+\newcommand{\admissibleSet}{\mathcal{A}}
+\newcommand{\projection}{\pi}
+\newcommand{\reconstruction}{\rho}
+\newcommand{\repairOp}{\mathcal{R}}
+\newcommand{\compatibility}{\kappa}
+\newcommand{\projectionEntropy}{\mathrm{H}_{\projection}}
+\newcommand{\CLIO}{\textsc{CLIO}\xspace}
+\newcommand{\RSVP}{\textsc{RSVP}\xspace}

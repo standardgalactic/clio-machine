@@ -1,0 +1,29 @@
+\documentclass[../../../clio.tex]{subfiles}
+\begin{document}
+
+\chapter{Applications}
+\label{ch:chapter-11-applications}
+
+\section{Chapter Preface}
+A robust abstraction should reveal sameness across domains that appear unrelated. Applications in this chapter are therefore not demonstrations of breadth alone; they are tests of structural invariance.
+
+Computer vision, robotics, physiology, program synthesis, and distributed systems each become instances of a single reconstruction architecture once their latent states, observations, and constraints are made explicit.
+
+The chapter emphasizes representation theorems over domain anecdotes, showing how one formal tuple can unify heterogeneous practice.
+
+\section{Derivations and Formal Results}
+Applications are presented as instances of a common CLIO tuple \((\stateSpace,\observationSpace,\projection,\constraintSet,F,J)\).
+
+\begin{description}
+  \item[Computer vision] Inverse rendering model: \(y=\mathcal R(x)+\eta\).
+  \item[Robotics] State estimation as admissible latent reconstruction under dynamics and sensor constraints.
+  \item[Biology] Physiological admissibility regions plus repair operators for homeostatic recovery.
+  \item[Program synthesis] Programs as latent structures constrained by behavioral specifications.
+  \item[Distributed systems] Global consistency from local propagation over shared constraints.
+\end{description}
+
+\begin{theorem}[Representation principle]
+Each domain above can be encoded as a CLIO system by choosing domain-specific state variables, observation map, and admissibility constraints while preserving common reconstruction dynamics.
+\end{theorem}
+
+\end{document}
