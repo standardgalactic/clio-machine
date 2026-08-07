@@ -1,0 +1,74 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import argparse
+import sys
+from ast import literal_eval
+
+from spherepop.primitives import Bind, Collapse, Pop, Refuse
+from spherepop.state import load_history, save_history
+from spherepop.trace import events_as_jsonl, render_trace
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(prog="spherepop")
+    parser.add_argument("--state-path", default=None)
+    subparsers = parser.add_subparsers(dest="command", required=True)
+
+    pop = subparsers.add_parser("pop")
+    pop.add_argument("value")
+
+    bind = subparsers.add_parser("bind")
+    bind.add_argument("left", type=int)
+    bind.add_argument("right", type=int)
+
+    refuse = subparsers.add_parser("refuse")
+    refuse.add_argument("target", type=int)
+    refuse.add_argument("--reason", default=None)
+
+    collapse = subparsers.add_parser("collapse")
+    collapse.add_argument("targets", nargs="+", type=int)
+
+    subparsers.add_parser("trace")
+    subparsers.add_parser("jsonl")
+    subparsers.add_parser("reset")
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    history = load_history(args.state_path)
+
+    if args.command == "pop":
+        Pop(history, _decode_value(args.value))
+        save_history(history, args.state_path)
+    elif args.command == "bind":
+        Bind(history, args.left, args.right)
+        save_history(history, args.state_path)
+    elif args.command == "refuse":
+        Refuse(history, args.target, reason=args.reason)
+        save_history(history, args.state_path)
+    elif args.command == "collapse":
+        Collapse(history, *args.targets)
+        save_history(history, args.state_path)
+    elif args.command == "trace":
+        sys.stdout.write(render_trace(history) + "\n")
+    elif args.command == "jsonl":
+        sys.stdout.write("\n".join(events_as_jsonl(history)) + ("\n" if history.events else ""))
+    elif args.command == "reset":
+        save_history(type(history)(), args.state_path)
+    else:
+        parser.error("unknown command")
+    return 0
+
+
+def _decode_value(value: str):
+    try:
+        return literal_eval(value)
+    except (SyntaxError, ValueError):
+        return value
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

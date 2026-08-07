@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import argparse
+import sys
+
+from forth.compiler import compile_source
+from forth.vm import ForthVM
+from spherepop.state import save_history
+from spherepop.trace import render_trace
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(prog="forth")
+    parser.add_argument("source", nargs="+", help="Forth program source tokens")
+    parser.add_argument("--state-path", default=None)
+    parser.add_argument("--show-bytecode", action="store_true")
+    parser.add_argument("--show-trace", action="store_true")
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    source = " ".join(args.source)
+    bytecode = compile_source(source)
+    vm = ForthVM()
+    output = vm.execute(bytecode)
+    save_history(vm.history, args.state_path)
+
+    if args.show_bytecode:
+        for instruction in bytecode:
+            print(instruction)
+    if output:
+        print(" ".join(str(item) for item in output))
+    if args.show_trace:
+        print(render_trace(vm.history))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
