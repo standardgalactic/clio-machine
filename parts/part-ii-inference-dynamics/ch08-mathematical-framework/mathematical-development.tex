@@ -1,0 +1,35 @@
+\section{Chapter Preface}
+Mature theories eventually become axiomatic. Mechanics, probability, and topology each evolved from useful techniques into formal systems with explicit primitives, assumptions, and theorems.
+
+CLIO reaches that transition point here. Earlier chapters introduced the pieces; this chapter consolidates them into a coherent tuple-level framework with explicit existence, uniqueness, and ambiguity structure.
+
+The resulting trichotomy of inconsistency, identifiability, and residual ambiguity becomes a reusable diagnostic across later chapters.
+
+\section{Derivations and Formal Results}
+Define a CLIO system tuple
+\[
+\mathfrak C=(\stateSpace,\observationSpace,\projection,\constraintSet,F,J).
+\]
+
+\begin{theorem}[Existence of preferred admissible reconstruction]
+If \(A_y\subseteq\stateSpace\) is nonempty and compact, and \(J:A_y\to\mathbb R\) is continuous, then there exists \(x^\star\in A_y\) such that
+\[
+J(x^\star)=\min_{x\in A_y}J(x).
+\]
+\end{theorem}
+
+\begin{proof}
+By Weierstrass, a continuous function on a nonempty compact set attains its minimum.
+\end{proof}
+
+\begin{proposition}[Uniqueness under strict convexity]
+If \(A_y\) is convex and \(J\) is strictly convex on \(A_y\), the minimizer is unique.
+\end{proposition}
+
+\begin{theorem}[Admissibility trichotomy]
+Exactly one of the following holds:
+\[
+A_y=\varnothing,\qquad |A_y|=1,\qquad |A_y|>1.
+\]
+These correspond to inconsistency, identifiability, and residual ambiguity.
+\end{theorem}

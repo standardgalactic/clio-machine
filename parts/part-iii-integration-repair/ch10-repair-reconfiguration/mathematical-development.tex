@@ -1,0 +1,21 @@
+\section{Chapter Preface}
+Scientific progress repeatedly shows that some failures cannot be solved by searching harder under current assumptions. Sometimes the representational rules themselves must change.
+
+CLIO distinguishes that transition sharply: optimization navigates a fixed admissible space, whereas repair changes the constraint system that defines admissibility.
+
+This chapter formalizes when repair is warranted and how minimal structural change can recover solvability without collapsing semantic coherence.
+
+\section{Derivations and Formal Results}
+Let constraint system be \(\constraintSet\) with \(A_y(\constraintSet)=\varnothing\). A repair operation maps constraints by
+\[
+R:\constraintSet\to\constraintSet'.
+\]
+Define repair objective
+\[
+\constraintSet^\star=\arg\min_{\constraintSet'}\left[K(\constraintSet,\constraintSet')+\lambda\,\mathcal I(\constraintSet')\right]
+\]
+subject to \(A_y(\constraintSet')\neq\varnothing\).
+
+\begin{theorem}[Repair warrant]
+If \(A_y(\constraintSet)=\varnothing\) but there exists \(\constraintSet'\) with \(A_y(\constraintSet')\neq\varnothing\), then no state-space optimization under \(\constraintSet\) can solve the reconstruction problem; constraint-level intervention is necessary.
+\end{theorem}

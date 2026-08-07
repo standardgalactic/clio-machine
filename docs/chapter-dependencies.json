@@ -1,0 +1,149 @@
+{
+  "chapters": [
+    {
+      "id": 1,
+      "slug": "ch01-introduction",
+      "part": "Foundations of Reconstruction",
+      "title": "Introduction",
+      "prerequisites": []
+    },
+    {
+      "id": 2,
+      "slug": "ch02-reconstruction-problem",
+      "part": "Foundations of Reconstruction",
+      "title": "The Reconstruction Problem",
+      "prerequisites": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "ch03-constraints-primary",
+      "part": "Foundations of Reconstruction",
+      "title": "Constraints as Primary Computational Objects",
+      "prerequisites": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "ch04-projection-geometry",
+      "part": "Foundations of Reconstruction",
+      "title": "Projection Geometry",
+      "prerequisites": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "ch05-constraint-propagation",
+      "part": "Inference and Dynamics",
+      "title": "Constraint Propagation",
+      "prerequisites": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 6,
+      "slug": "ch06-optimization-admissible-space",
+      "part": "Inference and Dynamics",
+      "title": "Optimisation Inside Admissible Space",
+      "prerequisites": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 7,
+      "slug": "ch07-clio-dynamics",
+      "part": "Inference and Dynamics",
+      "title": "CLIO Dynamics",
+      "prerequisites": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": 8,
+      "slug": "ch08-mathematical-framework",
+      "part": "Inference and Dynamics",
+      "title": "Mathematical Framework",
+      "prerequisites": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": 9,
+      "slug": "ch09-rsvp-relationship",
+      "part": "Integration and Repair",
+      "title": "Relationship to RSVP",
+      "prerequisites": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": 10,
+      "slug": "ch10-repair-reconfiguration",
+      "part": "Integration and Repair",
+      "title": "Repair as Constraint Reconfiguration",
+      "prerequisites": [
+        8,
+        9
+      ]
+    },
+    {
+      "id": 11,
+      "slug": "ch11-applications",
+      "part": "Integration and Repair",
+      "title": "Applications",
+      "prerequisites": [
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": 12,
+      "slug": "ch12-existing-paradigms",
+      "part": "Comparison and Continuation",
+      "title": "Comparison with Existing Paradigms",
+      "prerequisites": [
+        4,
+        8,
+        11
+      ]
+    },
+    {
+      "id": 13,
+      "slug": "ch13-future-research",
+      "part": "Comparison and Continuation",
+      "title": "Future Research",
+      "prerequisites": [
+        8,
+        11,
+        12
+      ]
+    },
+    {
+      "id": 14,
+      "slug": "ch14-conclusion",
+      "part": "Comparison and Continuation",
+      "title": "Conclusion",
+      "prerequisites": [
+        8,
+        11,
+        12,
+        13
+      ]
+    }
+  ]
+}

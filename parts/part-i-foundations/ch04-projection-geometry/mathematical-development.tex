@@ -1,0 +1,42 @@
+\section{Chapter Preface}
+Projection has a long technical history: perspective drawing, tomography, astronomical imaging, and computer graphics all depend on mapping richer spaces to poorer observations. The same operation both preserves invariants and destroys information.
+
+That duality is what makes reconstruction mathematically rich. CLIO leverages projection geometry to separate what observation determines from what remains hidden, and to quantify residual ambiguity.
+
+The chapter develops linear and nonlinear derivations, then links geometric null directions to information-theoretic uncertainty.
+
+\section{Derivations and Formal Results}
+For a linear projection \(P:\mathbb R^n\to\mathbb R^m\), every reconstruction has decomposition
+\[
+x=P^\dagger y + z,\qquad z\in\ker P,
+\]
+where \(P^\dagger\) is the Moore--Penrose pseudoinverse.
+
+\begin{proposition}[Minimum-norm reconstruction]
+\[
+x^\star=P^\dagger y
+\]
+solves
+\[
+\min_x \|x\|^2\quad\text{subject to}\quad Px=y.
+\]
+\end{proposition}
+
+\begin{proof}
+Using Lagrangian \(\mathcal L(x,\lambda)=\|x\|^2+\lambda^\top(Px-y)\), stationarity gives \(2x+P^\top\lambda=0\). Substituting into constraint yields normal equations whose minimum-norm solution is \(x=P^\dagger y\).
+\end{proof}
+
+\begin{definition}[Differential hidden directions]
+For nonlinear \(\projection\), local ambiguity directions at \(x\) are vectors in \(\ker D\projection_x\).
+\end{definition}
+
+\begin{definition}[Projection entropy]
+In discrete settings, projection entropy is residual uncertainty
+\[
+\projectionEntropy=H(X\mid Y),
+\]
+with chain rule
+\[
+H(X,Y)=H(Y)+H(X\mid Y),\qquad H(X\mid Y)=H(X)-I(X;Y).
+\]
+\end{definition}

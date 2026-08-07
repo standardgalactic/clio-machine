@@ -15,6 +15,8 @@ figures:
 
 check:
 	python scripts/manuscript/check_labels.py --root .
+	python scripts/manuscript/validate_scaffold.py --root .
+	python scripts/manuscript/generate_dependency_graph.py --root . --check
 
 clean:
 	$(LATEXMK) -r .latexmkrc -c $(MAIN)

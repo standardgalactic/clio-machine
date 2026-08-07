@@ -4,26 +4,25 @@
 \chapter{Conclusion}
 \label{ch:chapter-14-conclusion}
 
-\section{Chapter Preface}
-The book closes by returning to its opening question: why does incomplete observation force structured inference? The journey from projection to repair can now be read as one cumulative answer.
-
-Each chapter introduced a new layer—constraints, geometry, propagation, optimization, dynamics, and reconfiguration—needed to transform ambiguity into coherent reconstruction.
-
-The conclusion makes that circular narrative explicit: the final synthesis theorem illuminates the first proposition and anchors CLIO as a unified theory rather than a metaphor set.
-
-\section{Derivations and Formal Results}
-\begin{theorem}[CLIO synthesis theorem]
-Let \(\mathfrak C=(\stateSpace,\observationSpace,\projection,\constraintSet,F,J)\) be a CLIO system. Assume:
-\begin{enumerate}
-  \item \(A_y\) is nonempty,
-  \item \(A_y\) is invariant under \(F\),
-  \item There exists a Lyapunov function strictly decreasing outside \(A_y\).
-\end{enumerate}
-Then \(x_{t+1}=F(x_t)\) converges toward admissible reconstruction. If \(J\) is continuous and \(A_y\) compact, preferred reconstructions exist. If \(J\) is strictly convex on convex \(A_y\), that preferred reconstruction is unique.
-\end{theorem}
-
-\[
-\boxed{\text{observation}\to\text{constraint}\to\text{admissibility}\to\text{reconstruction}\to\text{optimization}\to\text{repair when reconstruction fails}}
-\]
+\input{metadata}
+\input{preface}
+\input{historical-motivation}
+\input{central-question}
+\input{conceptual-overview}
+\input{formal-definitions}
+\input{worked-examples}
+\input{mathematical-development}
+\input{major-derivations}
+\input{theorems}
+\input{proofs}
+\input{counterexamples}
+\input{computational-interpretation}
+\input{algorithms}
+\input{engineering-notes}
+\input{connections}
+\input{exercises}
+\input{research-problems}
+\input{summary}
+\input{notation}
 
 \end{document}

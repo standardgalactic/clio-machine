@@ -1,9 +1,35 @@
-This directory contains the chapter/appendix source and local assets.
+This chapter uses the standardized CLIO scaffold.
 
-- chapter.tex or appendix.tex: main source file
-- figures/: static chapter-local figures
-- simulations/: code or data that generates figures
-- tables/: structured table sources
-- exercises/: exercise material and metadata
-- notes/: drafting notes and rationale
-- code/: executable snippets referenced in listings
+Required files:
+
+- chapter.tex (thin orchestrator with ordered `\input{...}` blocks)
+- metadata.tex and metadata.json
+- preface.tex
+- historical-motivation.tex
+- central-question.tex
+- conceptual-overview.tex
+- formal-definitions.tex
+- worked-examples.tex
+- mathematical-development.tex
+- major-derivations.tex
+- theorems.tex
+- proofs.tex
+- counterexamples.tex
+- computational-interpretation.tex
+- algorithms.tex
+- engineering-notes.tex
+- connections.tex
+- exercises.tex
+- research-problems.tex
+- summary.tex
+- notation.tex
+- bibliography.bib
+
+Required subdirectories:
+
+- figures/
+- simulations/
+- code/
+- notes/
+- tables/
+- exercise-assets/

@@ -1,0 +1,23 @@
+{
+  "chapter": 5,
+  "slug": "ch05-constraint-propagation",
+  "title": "Constraint Propagation",
+  "part": "Inference and Dynamics",
+  "prerequisites": [
+    2,
+    3,
+    4
+  ],
+  "mathematics": [
+    "Linear Algebra",
+    "Topology",
+    "Optimization"
+  ],
+  "software": [
+    "Python"
+  ],
+  "estimated_reading": "3 hours",
+  "exercise_count": 12,
+  "proof_count": 6,
+  "derivation_count": 6
+}

@@ -4,46 +4,25 @@
 \chapter{CLIO Dynamics}
 \label{ch:chapter-07-clio-dynamics}
 
-\section{Chapter Preface}
-Computation can be viewed as motion rather than instruction execution: trajectories move through representational space toward progressively lower incompatibility. This dynamical lens is central to CLIO.
-
-Seen this way, iterative reconstruction is a stability problem. We ask whether updates contract error, whether admissible sets are invariant, and whether oscillation can be controlled or characterized.
-
-This chapter supplies the dynamical core by connecting reconstruction maps to Lyapunov and invariance arguments.
-
-\section{Derivations and Formal Results}
-Define iteration
-\[
-x_{t+1}=F(x_t;y,\constraintSet)
-\]
-and admissible target set
-\[
-A_y=\mathcal F_y\cap A.
-\]
-Define error \(E_t=d(x_t,A_y)\).
-
-\begin{theorem}[Geometric error decay]
-If \(E_{t+1}\le\rho E_t\) with \(0\le\rho<1\), then
-\[
-E_t\le\rho^tE_0\to0.
-\]
-\end{theorem}
-
-\begin{proof}
-Induction gives \(E_t\le\rho^tE_0\). Since \(\rho^t\to0\), convergence follows.
-\end{proof}
-
-\begin{definition}[Lyapunov witness for admissible convergence]
-A function \(V:\stateSpace\to\mathbb R_{\ge0}\) is admissibility Lyapunov if
-\[
-V(x)=0\iff x\in A_y,
-\quad
-V(F(x))-V(x)\le0.
-\]
-\end{definition}
-
-\begin{theorem}[Stability and asymptotic convergence]
-If \(V\) is nonincreasing along trajectories, \(A_y\) is stable. If strict decrease holds for \(x\notin A_y\), trajectories converge asymptotically to \(A_y\).
-\end{theorem}
+\input{metadata}
+\input{preface}
+\input{historical-motivation}
+\input{central-question}
+\input{conceptual-overview}
+\input{formal-definitions}
+\input{worked-examples}
+\input{mathematical-development}
+\input{major-derivations}
+\input{theorems}
+\input{proofs}
+\input{counterexamples}
+\input{computational-interpretation}
+\input{algorithms}
+\input{engineering-notes}
+\input{connections}
+\input{exercises}
+\input{research-problems}
+\input{summary}
+\input{notation}
 
 \end{document}

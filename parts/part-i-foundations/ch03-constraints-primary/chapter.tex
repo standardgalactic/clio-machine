@@ -4,49 +4,25 @@
 \chapter{Constraints as Primary Computational Objects}
 \label{ch:chapter-03-constraints-primary}
 
-\section{Chapter Preface}
-Not every logically possible reconstruction is plausible. Physical law, conservation principles, syntax, and structural regularities all restrict what can be real. CLIO treats those restrictions as first-class computational objects rather than post hoc filters.
-
-Historically, constraints are often introduced late, after a predictive model is fixed. This chapter inverts that order: computation is organized around compatibility among constraints, with solutions emerging as consistent intersections.
-
-The formal development establishes monotonicity, soft-constraint inconsistency functionals, and decomposition by compatibility structure.
-
-\section{Derivations and Formal Results}
-Represent each constraint by an admissible subset \(A_i\subseteq\stateSpace\), with global admissibility
-\[
-A=\bigcap_{i=1}^k A_i.
-\]
-
-\begin{proposition}[Monotonicity under added constraints]
-\[
-A_1\cap\cdots\cap A_k\cap A_{k+1}\subseteq A_1\cap\cdots\cap A_k.
-\]
-\end{proposition}
-
-\begin{proof}
-Every element of the left intersection satisfies all constraints in the right intersection; inclusion follows immediately.
-\end{proof}
-
-\begin{definition}[Soft-constraint violation functional]
-For each constraint, let \(v_i:\stateSpace\to\mathbb R_{\ge0}\) with \(v_i(x)=0\iff x\in A_i\). Define
-\[
-V(x)=\sum_i w_i v_i(x),\qquad w_i\ge0.
-\]
-\end{definition}
-
-\begin{proposition}
-If \(w_i>0\) for all \(i\), then
-\[
-V(x)=0\iff x\in\bigcap_i A_i.
-\]
-\end{proposition}
-
-\begin{proof}
-If \(x\in\cap_iA_i\), every \(v_i(x)=0\), so \(V(x)=0\). Conversely, if \(V(x)=0\), each nonnegative term \(w_iv_i(x)\) must vanish; with \(w_i>0\), this implies \(v_i(x)=0\), hence \(x\in A_i\) for all \(i\).
-\end{proof}
-
-\begin{theorem}[Decomposition by compatibility graph]
-Let constraints be graph vertices with an edge when two constraints share variables. If the graph decomposes into disconnected components with pairwise disjoint variable sets, then global admissibility factorizes into independent component-wise admissibility problems.
-\end{theorem}
+\input{metadata}
+\input{preface}
+\input{historical-motivation}
+\input{central-question}
+\input{conceptual-overview}
+\input{formal-definitions}
+\input{worked-examples}
+\input{mathematical-development}
+\input{major-derivations}
+\input{theorems}
+\input{proofs}
+\input{counterexamples}
+\input{computational-interpretation}
+\input{algorithms}
+\input{engineering-notes}
+\input{connections}
+\input{exercises}
+\input{research-problems}
+\input{summary}
+\input{notation}
 
 \end{document}

@@ -4,45 +4,25 @@
 \chapter{The Reconstruction Problem}
 \label{ch:chapter-02-reconstruction-problem}
 
-\section{Chapter Preface}
-Humans constantly reconstruct hidden reality from fragments. A physician reasons from signs, a physicist from detector traces, and a historian from incomplete documents. These activities look different on the surface but share the same structural core: a projection from latent causes to observed effects.
-
-This chapter universalizes that structure. Reconstruction is presented as a general computational problem independent of disciplinary context, and ambiguity is treated as a geometric property of fibres rather than a defect of a particular model.
-
-The chapter then isolates the conditions under which constraints convert observational equivalence classes into identifiable states.
-
-\section{Derivations and Formal Results}
-Let \(\projection:\stateSpace\to\observationSpace\) and define \(\mathcal F_y=\{x\in\stateSpace:\projection(x)=y\}.\)
-
-\begin{theorem}[Local fibre dimension]
-If \(\projection:\mathbb R^n\to\mathbb R^m\) is differentiable and \(D\projection_x\) has rank \(r\) on a neighborhood, then locally
-\[
-\dim \mathcal F_y = n-r.
-\]
-\end{theorem}
-
-\begin{proof}
-This is a direct consequence of the constant-rank theorem: in adapted coordinates, \(\projection\) is locally equivalent to coordinate projection onto \(r\) coordinates, leaving \(n-r\) free coordinates on the fibre.
-\end{proof}
-
-\begin{definition}[Reconstruction equivalence]
-Define
-\[
-x\sim_{\projection}x'\iff\projection(x)=\projection(x').
-\]
-\end{definition}
-
-\begin{proposition}
-\(\sim_{\projection}\) is an equivalence relation on \(\stateSpace\).
-\end{proposition}
-
-\begin{proof}
-Reflexive: \(\projection(x)=\projection(x)\). Symmetric: equality is symmetric. Transitive: if \(\projection(x)=\projection(x')\) and \(\projection(x')=\projection(x'')\), then \(\projection(x)=\projection(x'')\).
-\end{proof}
-
-\begin{theorem}[Constraint-induced identifiability]
-\label{thm:constraint-induced-identifiability}
-Let \(\admissibleSet_{\constraintSet}=\bigcap_i\{x:c_i(x)\le0\}.\) If \(\mathcal F_y\cap\admissibleSet_{\constraintSet}\) contains exactly one element, then the latent state is identifiable relative to \(\constraintSet\).
-\end{theorem}
+\input{metadata}
+\input{preface}
+\input{historical-motivation}
+\input{central-question}
+\input{conceptual-overview}
+\input{formal-definitions}
+\input{worked-examples}
+\input{mathematical-development}
+\input{major-derivations}
+\input{theorems}
+\input{proofs}
+\input{counterexamples}
+\input{computational-interpretation}
+\input{algorithms}
+\input{engineering-notes}
+\input{connections}
+\input{exercises}
+\input{research-problems}
+\input{summary}
+\input{notation}
 
 \end{document}

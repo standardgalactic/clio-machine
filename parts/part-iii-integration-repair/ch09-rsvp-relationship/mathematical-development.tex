@@ -1,0 +1,33 @@
+\section{Chapter Preface}
+No reconstruction theory stands alone. Reconstruction presupposes an underlying world that generates observations, and that ontological substrate must be made explicit when theory deepens.
+
+This chapter positions RSVP as that substrate and CLIO as the epistemic recovery layer. The objective is not rhetorical comparison but formal embedding.
+
+Variational field equations are therefore rewritten as constrained reconstruction statements, aligning field dynamics with admissibility geometry.
+
+\section{Derivations and Formal Results}
+Let RSVP field state be \(\Psi=(\Phi,\mathbf v,S)\) on domain \(\Omega\), observation map \(\projection(\Psi)=y\), and admissible field set
+\[
+\mathcal A_y=\{\Psi:\projection(\Psi)=y,\ \mathcal E[\Psi]\le\epsilon,\ \mathcal C[\Psi]=0\}.
+\]
+
+\begin{proposition}[Variational RSVP as constrained reconstruction]
+\[
+\Psi^\star=\arg\min_{\Psi\in\mathcal A_y}\mathcal S[\Psi].
+\]
+\end{proposition}
+
+\begin{definition}[Constrained functional]
+For
+\[
+\mathcal J[\Psi]=\int_\Omega L(\Psi,\nabla\Psi)\,dV,
+\]
+subject to \(G[\Psi]=0\), define
+\[
+\widetilde{\mathcal J}=\mathcal J+\lambda G.
+\]
+\end{definition}
+
+\begin{proposition}
+Stationarity of \(\widetilde{\mathcal J}\) yields Euler--Lagrange equations with multiplier-enforced constraints.
+\end{proposition}

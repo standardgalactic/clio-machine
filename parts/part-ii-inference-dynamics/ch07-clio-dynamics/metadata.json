@@ -1,0 +1,22 @@
+{
+  "chapter": 7,
+  "slug": "ch07-clio-dynamics",
+  "title": "CLIO Dynamics",
+  "part": "Inference and Dynamics",
+  "prerequisites": [
+    5,
+    6
+  ],
+  "mathematics": [
+    "Linear Algebra",
+    "Topology",
+    "Optimization"
+  ],
+  "software": [
+    "Python"
+  ],
+  "estimated_reading": "3 hours",
+  "exercise_count": 12,
+  "proof_count": 6,
+  "derivation_count": 6
+}

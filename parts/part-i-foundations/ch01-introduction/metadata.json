@@ -1,0 +1,19 @@
+{
+  "chapter": 1,
+  "slug": "ch01-introduction",
+  "title": "Introduction",
+  "part": "Foundations of Reconstruction",
+  "prerequisites": [],
+  "mathematics": [
+    "Linear Algebra",
+    "Topology",
+    "Optimization"
+  ],
+  "software": [
+    "Python"
+  ],
+  "estimated_reading": "3 hours",
+  "exercise_count": 12,
+  "proof_count": 6,
+  "derivation_count": 6
+}

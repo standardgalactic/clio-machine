@@ -1,0 +1,22 @@
+{
+  "chapter": 10,
+  "slug": "ch10-repair-reconfiguration",
+  "title": "Repair as Constraint Reconfiguration",
+  "part": "Integration and Repair",
+  "prerequisites": [
+    8,
+    9
+  ],
+  "mathematics": [
+    "Linear Algebra",
+    "Topology",
+    "Optimization"
+  ],
+  "software": [
+    "Python"
+  ],
+  "estimated_reading": "3 hours",
+  "exercise_count": 12,
+  "proof_count": 6,
+  "derivation_count": 6
+}
