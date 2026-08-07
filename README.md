@@ -68,3 +68,12 @@ python -m unittest discover -s tests -p "test_*.py"
 Invariant-focused regression coverage lives in:
 
 - `/home/runner/work/clio-machine/clio-machine/tests/test_semantic_invariants.py`
+
+## Canonical local verification (matches CI)
+
+Run the same verification sequence used by the CI workflow before opening a pull request:
+
+```bash
+python -m unittest discover -s tests -p "test_*.py"
+make check
+```

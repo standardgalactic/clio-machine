@@ -20,6 +20,10 @@
 - Branching or multi-frontier history views
 - Alternative execution models over the same primitive substrate
 
+Experiment proposals with scoped success criteria and gating conditions live in:
+
+- `/home/runner/work/clio-machine/clio-machine/docs/EXPERIMENT_PROPOSALS.md`
+
 ## Long-term goals
 
 - Treat the repository as executable specification of the underlying theory

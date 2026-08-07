@@ -30,13 +30,17 @@ This document defines semantic contracts that all implementations in this reposi
    - Parent links must remain explicit in the event record.
 
 3. **Refuse**
-   - Records refusal as a new event.
-   - May remove a target from frontier.
-   - Must not delete the target event from history.
+   - Requires exactly one existing target event index.
+   - Records refusal as a new `REFUSE` event with `parents=(target,)`.
+   - Stores refusal payload including target and reason metadata.
+   - Removes the target from frontier if present.
+   - Must not delete or mutate the target event in history.
 
 4. **Collapse**
-   - Produces a new event representing a new representation stage.
-   - May remove target events from frontier.
+   - Requires at least one existing target event index.
+   - Produces a new `COLLAPSE` event with ordered parent links matching target order.
+   - Removes each target from frontier if present.
+   - Adds the collapse event to frontier as a new available distinction.
    - Must not mutate target events.
 
 ## Pull request policy

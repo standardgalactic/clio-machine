@@ -80,6 +80,14 @@ The refused distinction remains part of history.
 
 Future computation may still reference it.
 
+Operational contract in this repository:
+
+- Refuse takes one existing target index.
+- Refuse appends exactly one `REFUSE` event.
+- The refusal event records parent links as `(target,)`.
+- The refusal value records target and reason fields.
+- Refuse may remove the target from the frontier, but never from history.
+
 ---
 
 ## Collapse
@@ -93,6 +101,15 @@ Collapse records that multiple distinctions have been incorporated into a new hi
 The precise mathematical semantics of Collapse remain an active research topic.
 
 Implementations should therefore avoid assuming Collapse is merely evaluation, reduction, garbage collection, or simplification.
+
+Operational contract in this repository:
+
+- Collapse takes one or more existing target indices.
+- Collapse appends exactly one `COLLAPSE` event.
+- Parent links preserve the provided target order.
+- Collapse may remove targets from the frontier.
+- Collapse adds its newly created event to the frontier.
+- Collapse never mutates parent events.
 
 ---
 
