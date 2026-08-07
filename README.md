@@ -1,6 +1,6 @@
 # clio-machine
 
-Constraint-Linked Inference Organiser (CLIO)
+Constraint-Linked Inference Optimizer (CLIO)
 
 This repository implements the bottom of the CLIO experimental ladder:
 
