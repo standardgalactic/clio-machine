@@ -2,20 +2,40 @@
 \begin{document}
 
 \chapter{Future Research}
-\label{ch:chapter-13-future-researchapter-}
+\label{ch:chapter-13-future-research}
 
-\begin{definition}[Admissible Reconstruction]
-A reconstruction \(x\in\stateSpace\) is admissible if it is consistent with observations in \(\observationSpace\) and satisfies all active hard constraints in \(\constraintSet\).
+\section{Chapter Preface}
+Foundational theory should open research programs, not close them. Once primitives are clear, new questions become sharper: hierarchical depth, temporal admissibility, multi-agent feasibility, and categorical structure.
+
+This chapter treats future work as an extension of the same formal spine rather than a speculative epilogue. Each direction is stated in mathematically checkable terms.
+
+The intended outcome is a map of rigorous next steps that preserves continuity with the framework already established.
+
+\section{Derivations and Formal Results}
+
+\begin{definition}[Hierarchical admissibility]
+\[
+A^{(0)}\supseteq A^{(1)}\supseteq\cdots\supseteq A^{(k)}.
+\]
 \end{definition}
 
-\section{Core Objectives}
-\begin{itemize}
-  \item Identify hierarchical and temporal reconstruction extensions.
-  \item Propose differentiable and category-theoretic formulations.
-  \item Plan integration with continuation and broader repair theory.
-\end{itemize}
+\begin{proposition}[Finite hierarchical existence preservation]
+If each refinement set is nonempty and compact, then every finite refinement level remains nonempty and compact, preserving existence of admissible candidates.
+\end{proposition}
 
-\section{Development Notes}
-Chapter-local figures, exercises, notes, and executable artifacts are maintained within this chapter directory so narrative, mathematics, and computational assets evolve together.
+\begin{definition}[Temporal CLIO]
+For trajectories \(\gamma:[0,T]\to\stateSpace\), path admissibility is
+\[
+\gamma\in\mathcal A\iff c_i(\gamma,t)\le0\quad\forall t\in[0,T],\ \forall i.
+\]
+\end{definition}
+
+\begin{definition}[Multi-agent admissibility]
+Given agent-specific sets \(A_1,\ldots,A_n\), collective feasibility requires \(\bigcap_iA_i\neq\varnothing\).
+\end{definition}
+
+\begin{proposition}[Categorical lifting view]
+Observation morphisms induce commutative squares and reconstruction corresponds to constrained lift existence and uniqueness questions.
+\end{proposition}
 
 \end{document}

@@ -4,18 +4,42 @@
 \chapter{Introduction}
 \label{ch:chapter-01-introduction}
 
-\begin{definition}[Admissible Reconstruction]
-A reconstruction \(x\in\stateSpace\) is admissible if it is consistent with observations in \(\observationSpace\) and satisfies all active hard constraints in \(\constraintSet\).
+\section{Conceptual Frame}
+\CLIO treats inference as admissible reconstruction from incomplete observation, with optimization only defined after feasibility is established.
+
+\section{Chapter Preface}
+Inference is hard because observation is always partial. We do not see causes directly; we infer them from traces, measurements, and artifacts. Astronomy infers stellar dynamics from light, medicine infers pathology from symptoms, archaeology infers social structures from ruins, and machine learning infers latent structure from finite data.
+
+This chapter frames CLIO from that inverse-problem perspective. Before any algorithmic machinery, we ask why reconstruction is necessary at all: projection discards information. The chapter's formal results make this loss explicit and establish why extra structure, in the form of constraints, is mathematically unavoidable.
+
+By the end, the reader should see admissible reconstruction not as a niche technique but as the primitive operation from which prediction and optimization derive.
+
+\section{Derivations and Formal Results}
+\begin{definition}[Observation Map]
+Let \(\stateSpace\) be a latent state space, \(\observationSpace\) an observation space, and \(\projection:\stateSpace\to\observationSpace\) the observation map.
 \end{definition}
 
-\section{Core Objectives}
-\begin{itemize}
-  \item Motivate limitations of prediction-centric machine learning.
-  \item Define reconstruction from incomplete observations as the primary inference problem.
-  \item State CLIO thesis: computation as incompatibility reduction across interacting constraints.
-\end{itemize}
+\begin{definition}[Reconstruction Fibre]
+For \(y\in\observationSpace\), define the reconstruction fibre
+\[
+\mathcal R(y)=\projection^{-1}(y)=\{x\in\stateSpace:\projection(x)=y\}.
+\]
+\end{definition}
 
-\section{Development Notes}
-Chapter-local figures, exercises, notes, and executable artifacts are maintained within this chapter directory so narrative, mathematics, and computational assets evolve together.
+\begin{proposition}[Non-uniqueness of reconstruction]
+\label{prop:non-unique-reconstruction}
+If \(\projection\) is not injective, then there exists \(y\in\observationSpace\) such that \(|\mathcal R(y)|>1\).
+\end{proposition}
+
+\begin{proof}
+If \(\projection\) is not injective, choose distinct \(x_1,x_2\in\stateSpace\) with \(\projection(x_1)=\projection(x_2)=y\). Then \(x_1,x_2\in\mathcal R(y)\), hence \(|\mathcal R(y)|>1\).
+\end{proof}
+
+\begin{definition}[CLIO admissible reconstruction set]
+Given constraints \(\constraintSet=\{c_i\}_{i\in I}\), define
+\[
+\admissibleSet(y;\constraintSet)=\{x\in\stateSpace:\projection(x)=y,\ c_i(x)\le 0\ \forall i\in I\}.
+\]
+\end{definition}
 
 \end{document}

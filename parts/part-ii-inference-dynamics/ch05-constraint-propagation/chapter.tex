@@ -4,18 +4,37 @@
 \chapter{Constraint Propagation}
 \label{ch:chapter-05-constraint-propagation}
 
-\begin{definition}[Admissible Reconstruction]
-A reconstruction \(x\in\stateSpace\) is admissible if it is consistent with observations in \(\observationSpace\) and satisfies all active hard constraints in \(\constraintSet\).
-\end{definition}
+\section{Chapter Preface}
+Local decisions can force global consequences. Crossword fills, Sudoku constraints, molecular interactions, and distributed consistency protocols all demonstrate that seemingly isolated commitments reverberate through a system.
 
-\section{Core Objectives}
-\begin{itemize}
-  \item Develop iterative propagation operators.
-  \item Relate local consistency updates to global feasibility.
-  \item Compare CLIO propagation with CSP, SAT, and belief propagation methods.
-\end{itemize}
+Constraint propagation is the machinery that carries those reverberations. Rather than treating propagation as a heuristic, CLIO formulates it as an operator-theoretic process over admissible candidate sets.
 
-\section{Development Notes}
-Chapter-local figures, exercises, notes, and executable artifacts are maintained within this chapter directory so narrative, mathematics, and computational assets evolve together.
+This chapter builds the fixed-point perspective needed to reason about termination, convergence, and correctness at scale.
+
+\section{Derivations and Formal Results}
+Let each constraint define a pruning operator \(T_i:\mathcal P(\stateSpace)\to\mathcal P(\stateSpace)\), and define
+\[
+T=T_k\circ\cdots\circ T_1.
+\]
+
+\begin{proposition}[Monotone set contraction]
+If each \(T_i(S)\subseteq S\), then sequence \(S_{n+1}=T(S_n)\) is monotonically decreasing under set inclusion.
+\end{proposition}
+
+\begin{proof}
+By composition, \(T(S_n)\subseteq S_n\) for each \(n\), so \(S_{n+1}\subseteq S_n\).
+\end{proof}
+
+\begin{proposition}[Finite termination on finite state spaces]
+If \(\stateSpace\) is finite, the monotone sequence \(S_{n+1}=T(S_n)\) stabilizes in finitely many steps.
+\end{proposition}
+
+\begin{theorem}[Knaster--Tarski fixed points]
+If \(T\) is monotone on a complete lattice, then \(T\) has least and greatest fixed points.
+\end{theorem}
+
+\begin{theorem}[Banach convergence for metric propagators]
+If \((M,d)\) is complete and \(d(Tx,Ty)\le qd(x,y)\) with \(0<q<1\), then \(T\) has a unique fixed point and Picard iteration converges to it.
+\end{theorem}
 
 \end{document}

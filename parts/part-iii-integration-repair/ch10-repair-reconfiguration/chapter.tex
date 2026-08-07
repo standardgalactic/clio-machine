@@ -4,18 +4,26 @@
 \chapter{Repair as Constraint Reconfiguration}
 \label{ch:chapter-10-repair-reconfiguration}
 
-\begin{definition}[Admissible Reconstruction]
-A reconstruction \(x\in\stateSpace\) is admissible if it is consistent with observations in \(\observationSpace\) and satisfies all active hard constraints in \(\constraintSet\).
-\end{definition}
+\section{Chapter Preface}
+Scientific progress repeatedly shows that some failures cannot be solved by searching harder under current assumptions. Sometimes the representational rules themselves must change.
 
-\section{Core Objectives}
-\begin{itemize}
-  \item Use reconstruction failure to diagnose incompatible assumptions.
-  \item Define repair operators distinct from optimization steps.
-  \item Show iterative knowledge refinement via admissibility-preserving updates.
-\end{itemize}
+CLIO distinguishes that transition sharply: optimization navigates a fixed admissible space, whereas repair changes the constraint system that defines admissibility.
 
-\section{Development Notes}
-Chapter-local figures, exercises, notes, and executable artifacts are maintained within this chapter directory so narrative, mathematics, and computational assets evolve together.
+This chapter formalizes when repair is warranted and how minimal structural change can recover solvability without collapsing semantic coherence.
+
+\section{Derivations and Formal Results}
+Let constraint system be \(\constraintSet\) with \(A_y(\constraintSet)=\varnothing\). A repair operation maps constraints by
+\[
+R:\constraintSet\to\constraintSet'.
+\]
+Define repair objective
+\[
+\constraintSet^\star=\arg\min_{\constraintSet'}\left[K(\constraintSet,\constraintSet')+\lambda\,\mathcal I(\constraintSet')\right]
+\]
+subject to \(A_y(\constraintSet')\neq\varnothing\).
+
+\begin{theorem}[Repair warrant]
+If \(A_y(\constraintSet)=\varnothing\) but there exists \(\constraintSet'\) with \(A_y(\constraintSet')\neq\varnothing\), then no state-space optimization under \(\constraintSet\) can solve the reconstruction problem; constraint-level intervention is necessary.
+\end{theorem}
 
 \end{document}

@@ -4,18 +4,46 @@
 \chapter{CLIO Dynamics}
 \label{ch:chapter-07-clio-dynamics}
 
-\begin{definition}[Admissible Reconstruction]
-A reconstruction \(x\in\stateSpace\) is admissible if it is consistent with observations in \(\observationSpace\) and satisfies all active hard constraints in \(\constraintSet\).
+\section{Chapter Preface}
+Computation can be viewed as motion rather than instruction execution: trajectories move through representational space toward progressively lower incompatibility. This dynamical lens is central to CLIO.
+
+Seen this way, iterative reconstruction is a stability problem. We ask whether updates contract error, whether admissible sets are invariant, and whether oscillation can be controlled or characterized.
+
+This chapter supplies the dynamical core by connecting reconstruction maps to Lyapunov and invariance arguments.
+
+\section{Derivations and Formal Results}
+Define iteration
+\[
+x_{t+1}=F(x_t;y,\constraintSet)
+\]
+and admissible target set
+\[
+A_y=\mathcal F_y\cap A.
+\]
+Define error \(E_t=d(x_t,A_y)\).
+
+\begin{theorem}[Geometric error decay]
+If \(E_{t+1}\le\rho E_t\) with \(0\le\rho<1\), then
+\[
+E_t\le\rho^tE_0\to0.
+\]
+\end{theorem}
+
+\begin{proof}
+Induction gives \(E_t\le\rho^tE_0\). Since \(\rho^t\to0\), convergence follows.
+\end{proof}
+
+\begin{definition}[Lyapunov witness for admissible convergence]
+A function \(V:\stateSpace\to\mathbb R_{\ge0}\) is admissibility Lyapunov if
+\[
+V(x)=0\iff x\in A_y,
+\quad
+V(F(x))-V(x)\le0.
+\]
 \end{definition}
 
-\section{Core Objectives}
-\begin{itemize}
-  \item Define iterative reconstruction state updates.
-  \item Analyze oscillation, stability, and attractor structure.
-  \item Connect convergence operators to repair triggers.
-\end{itemize}
-
-\section{Development Notes}
-Chapter-local figures, exercises, notes, and executable artifacts are maintained within this chapter directory so narrative, mathematics, and computational assets evolve together.
+\begin{theorem}[Stability and asymptotic convergence]
+If \(V\) is nonincreasing along trajectories, \(A_y\) is stable. If strict decrease holds for \(x\notin A_y\), trajectories converge asymptotically to \(A_y\).
+\end{theorem}
 
 \end{document}
