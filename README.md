@@ -19,6 +19,9 @@ The current implementation is intentionally small and append-only:
 - `spherepop_blender/` + `scenes/` provide a Blender visualization suite for
   persistent Spherepop event histories.
 
+The manuscript now follows a standardized modular chapter scaffold with shared
+`common/` reusable content, chapter metadata, and a generated prerequisite graph.
+
 ## Research protocol docs
 
 - `/home/runner/work/clio-machine/clio-machine/COPILOT.md` defines contributor context for coding agents.
@@ -45,6 +48,14 @@ bin/forth "2 3 + ."
 ```
 
 Use `SPHEREPOP_STATE_PATH` to control where history is persisted.
+
+## Manuscript scaffold checks
+
+```bash
+make check
+```
+
+This validates labels, chapter scaffold consistency, and dependency graph drift.
 
 ## Tests
 

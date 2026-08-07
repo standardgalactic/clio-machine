@@ -4,43 +4,25 @@
 \chapter{Optimisation Inside Admissible Space}
 \label{ch:chapter-06-optimization-admissible-space}
 
-\section{Chapter Preface}
-Modern machine learning often foregrounds optimization and assumes feasibility is implicit. CLIO reverses this ordering. Preference over invalid reconstructions is not merely suboptimal; it is semantically meaningless.
-
-The chapter therefore distinguishes admissibility from objective quality. Feasible reconstruction defines the domain of meaningful choice, and optimization refines only within that domain.
-
-The resulting mathematics clarifies exactly when Lagrangian and KKT machinery can be trusted to produce admissible and globally valid optima.
-
-\section{Derivations and Formal Results}
-Define feasible set
-\[
-A=\{x:g_i(x)\le0,\ h_j(x)=0\}.
-\]
-Optimization is
-\[
-x^\star\in\arg\min_{x\in A}J(x).
-\]
-
-\begin{proposition}[Unconstrained optimum may be inadmissible]
-\[
-\arg\min_{x\in\stateSpace}J(x)
-\]
-need not intersect \(A\).
-\end{proposition}
-
-\begin{proof}
-Counterexample: \(\stateSpace=\mathbb R\), \(J(x)=x^2\), \(A=[1,\infty)\). Unconstrained minimizer is \(0\notin A\).
-\end{proof}
-
-\begin{definition}[Lagrangian and KKT system]
-\[
-\mathcal L(x,\lambda,\mu)=J(x)+\sum_i\lambda_i g_i(x)+\sum_j\mu_j h_j(x).
-\]
-KKT conditions include stationarity, primal feasibility, dual feasibility, and complementary slackness.
-\end{definition}
-
-\begin{theorem}[Sufficient optimality under convexity]
-If \(J\) and all \(g_i\) are convex, each \(h_j\) affine, and Slater's condition holds, then any KKT point is globally optimal.
-\end{theorem}
+\input{metadata}
+\input{preface}
+\input{historical-motivation}
+\input{central-question}
+\input{conceptual-overview}
+\input{formal-definitions}
+\input{worked-examples}
+\input{mathematical-development}
+\input{major-derivations}
+\input{theorems}
+\input{proofs}
+\input{counterexamples}
+\input{computational-interpretation}
+\input{algorithms}
+\input{engineering-notes}
+\input{connections}
+\input{exercises}
+\input{research-problems}
+\input{summary}
+\input{notation}
 
 \end{document}

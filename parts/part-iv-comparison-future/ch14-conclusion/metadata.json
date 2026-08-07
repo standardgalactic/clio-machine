@@ -1,0 +1,24 @@
+{
+  "chapter": 14,
+  "slug": "ch14-conclusion",
+  "title": "Conclusion",
+  "part": "Comparison and Continuation",
+  "prerequisites": [
+    8,
+    11,
+    12,
+    13
+  ],
+  "mathematics": [
+    "Linear Algebra",
+    "Topology",
+    "Optimization"
+  ],
+  "software": [
+    "Python"
+  ],
+  "estimated_reading": "3 hours",
+  "exercise_count": 12,
+  "proof_count": 6,
+  "derivation_count": 6
+}

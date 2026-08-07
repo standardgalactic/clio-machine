@@ -4,40 +4,25 @@
 \chapter{Comparison with Existing Paradigms}
 \label{ch:chapter-12-existing-paradigms}
 
-\section{Chapter Preface}
-Scientific frameworks are rarely discarded outright; they are typically reinterpreted as limiting or special cases within broader formalisms. This chapter adopts that historical perspective.
-
-Bayesian inference, SAT/CSP, neural networks, and diffusion procedures are examined as specific realizations of reconstruction under different choices of constraints, objectives, and parameterization.
-
-The goal is comparative mathematics: precise reduction and inclusion relations, not rhetorical positioning.
-
-\section{Derivations and Formal Results}
-
-\begin{proposition}[Bayesian MAP as soft-constraint optimization]
-From
-\[
-p(x\mid y)\propto p(y\mid x)p(x),
-\]
-MAP inference
-\[
-x^\star=\arg\max_x p(x\mid y)
-\]
-is equivalent to minimizing
-\[
--\log p(y\mid x)-\log p(x).
-\]
-\end{proposition}
-
-\begin{proof}
-Negative logarithm is monotone decreasing on positive reals, so maximizing posterior equals minimizing negative log-posterior up to additive normalizing constants independent of \(x\).
-\end{proof}
-
-\begin{proposition}[SAT/CSP embedding]
-Boolean satisfiability and finite-domain CSPs embed directly in CLIO by taking admissible states as satisfying assignments.
-\end{proposition}
-
-\begin{proposition}[Amortized CLIO networks]
-A learned map \(f_\theta:\observationSpace\to\stateSpace\) acts as an amortized CLIO solver when \(f_\theta(y)\in A_y\) for all \(y\).
-\end{proposition}
+\input{metadata}
+\input{preface}
+\input{historical-motivation}
+\input{central-question}
+\input{conceptual-overview}
+\input{formal-definitions}
+\input{worked-examples}
+\input{mathematical-development}
+\input{major-derivations}
+\input{theorems}
+\input{proofs}
+\input{counterexamples}
+\input{computational-interpretation}
+\input{algorithms}
+\input{engineering-notes}
+\input{connections}
+\input{exercises}
+\input{research-problems}
+\input{summary}
+\input{notation}
 
 \end{document}

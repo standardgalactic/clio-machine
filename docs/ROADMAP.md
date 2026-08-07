@@ -25,3 +25,4 @@
 - Treat the repository as executable specification of the underlying theory
 - Increase formal alignment between implementation behavior and research semantics
 - Make semantic regressions easier to detect than implementation regressions
+- Keep textbook chapters structurally uniform so book, simulations, and examples can be generated from shared source modules

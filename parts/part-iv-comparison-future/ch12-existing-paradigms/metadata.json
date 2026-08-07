@@ -1,0 +1,23 @@
+{
+  "chapter": 12,
+  "slug": "ch12-existing-paradigms",
+  "title": "Comparison with Existing Paradigms",
+  "part": "Comparison and Continuation",
+  "prerequisites": [
+    4,
+    8,
+    11
+  ],
+  "mathematics": [
+    "Linear Algebra",
+    "Topology",
+    "Optimization"
+  ],
+  "software": [
+    "Python"
+  ],
+  "estimated_reading": "3 hours",
+  "exercise_count": 12,
+  "proof_count": 6,
+  "derivation_count": 6
+}
